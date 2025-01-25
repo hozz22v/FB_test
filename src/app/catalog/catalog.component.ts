@@ -68,15 +68,4 @@ export class CatalogComponent {
   // API
   constructor(private http: HttpClient) {}
 
-  // ngOnInit():void{
-  //   this.FetchApi();
-  // }
-
-  // public FetchApi(){
-  //   this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(
-  //     (response:any)=>{
-  //       console.log(response)
-  //     }
-  //   );
-  // }
 }
