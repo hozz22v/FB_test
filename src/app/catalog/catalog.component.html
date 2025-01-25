@@ -1,0 +1,46 @@
+<div class="global_wrapper">
+  <div class="formApi">
+    <h1>TEST API</h1>
+    <form
+      class="help_form"
+      [formGroup]="apiform"
+      (ngSubmit)="ApiSubmit($event)"
+    >
+      <article class="error_flex">
+        <input
+          [class.red]="username?.invalid && username?.touched"
+          type="text"
+          class="input"
+          placeholder="Логин"
+          formControlName="username"
+        />
+        <div
+          class="alert"
+          *ngIf="
+            apiform.get('username')?.invalid && apiform.get('username')?.touched
+          "
+        >
+          {{ error_format }}
+        </div>
+      </article>
+      <article class="error_flex">
+        <input
+          [class.red]="password?.invalid && password?.touched"
+          type="text"
+          class="input"
+          placeholder="Пароль"
+          formControlName="password"
+        />
+        <div
+          class="alert"
+          *ngIf="
+            apiform.get('password')?.invalid && apiform.get('password')?.touched
+          "
+        >
+          {{ error_format }}
+        </div>
+      </article>
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+  </div>
+</div>

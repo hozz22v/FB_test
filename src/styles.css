@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Cormorant";
+  src: url("/Cormorant/Cormorant-VariableFont_wght.ttf") format(truetype);
+  font-weight: normal;
+  font-size: normal;
+}
+
+body {
+  font-family: "Cormorant";
+  width: 100%;
+  background: var(--main-green-1);
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  --main-green-1: #1d2f30;
+  --main-green-2: #83a440;
+  --main-green-3: #bae249;
+  --main-white-1: rgb(231, 231, 231);
+  --main-grey-1: #899d9d;
+  --main-dark: #0b1919;
+  --main-green-text: #506829;
+  --green-active: #688b05;
+  --secondary-grey: #899d9d;
+  --green-hover-icon: #91ac46;
+}
+
+h1 {
+  width: auto;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--main-white-1);
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+a {
+  color: var(--main-white-1);
+  transition: 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a:hover {
+  transition: 0.2s;
+  color: var(--main-green-2);
+  cursor: pointer;
+}
+
+a:focus {
+  outline: var(--main-green-2);
+  transition: 0.2s;
+}
+
+a:active {
+  color: var(--green-active);
+  transition: 0.2s;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid var(--main-green-3);
+  color: var(--main-green-3);
+  background: transparent;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--main-green-3);
+  color: var(--main-dark);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:focus {
+  transition: 0.2s;
+  border: 1px solid var(--main-green-3);
+  outline: 1px solid var(--green-active);
+  outline-offset: 1px;
+}
+
+.btn:active {
+  transition: 0.2s;
+  background: var(--green-active);
+  border: 1px solid var(--green-active);
+}
+
+.btn:disabled {
+  color: var(--secondary-grey);
+  border: 1px solid var(--secondary-grey);
+  background: transparent;
+}
+
+.btn_alt {
+  background: var(--main-green-3);
+  color: var(--main-dark);
+  padding: 10px 20px;
+  border: none;
+  transition: 0.2s;
+}
+
+.btn_alt:hover {
+  background: var(--green-hover-icon);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn_alt:focus {
+  outline: 1px solid var(--green-hover-icon);
+  outline-offset: 1px;
+  transition: 0.2s;
+}
+
+.btn_alt:active {
+  background: var(--green-active);
+  transition: 0.2s;
+}
+
+.btn_alt:disabled {
+  background: var(--secondary-grey);
+  color: var(--main-green-1);
+}
+
+.red {
+  border: 1px solid red !important;
+  outline: none;
+}
+
+.red:focus {
+  outline: none !important;
+}
+
+.nav_icon {
+  height: 25px;
+  transition: 0.2s;
+}
+
+.nav_icon:focus {
+  outline: 1px solid var(--main-green-2);
+  transition: 0.2s;
+}
+
+.icon:hover {
+  /* --green-hover-icon */
+  filter: brightness(0) saturate(100%) invert(66%) sepia(4%) saturate(5341%)
+    hue-rotate(34deg) brightness(94%) contrast(96%);
+}
+
+.icon:active {
+  /* --green-active #688b05 */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(53%) saturate(3174%)
+    hue-rotate(52deg) brightness(95%) contrast(96%);
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--main-white-1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--main-white-1);
+  margin-top: 0;
+  font-style: italic;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.help_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.input {
+  padding: 10px 16px;
+  transition: 0.2s;
+  border: none;
+}
+
+.input:hover {
+  background: #899d9d;
+  transition: 0.2s;
+  color: var(--main-white-1);
+  cursor: pointer;
+}
+
+.input:hover::placeholder {
+  color: var(--main-white-1);
+}
+
+.input:focus {
+  outline: 1px solid var(--main-green-2);
+  outline-offset: 1px;
+  transition: 0.2s;
+}
+
+.alert {
+  position: static;
+  color: red;
+  font-size: 12px;
+  padding-left: 16px;
+  margin-bottom: 3px;
+}

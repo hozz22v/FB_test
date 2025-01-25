@@ -1,0 +1,45 @@
+<header>
+  <div class="nav_wrapper">
+    <article class="nav_block">
+      <a routerLink="/" routerLinkActive="active" class="nav_logo">
+        <img [src]="logo_icon | imgPath" alt="" class="logo" />
+      </a>
+    </article>
+    <article class="nav_block adp">
+      <a routerLink="/catalog" routerLinkActive="active" class="nav_href">{{
+        link1
+      }}</a>
+      <a routerLink="/gallery" routerLinkActive="active" class="nav_href">{{
+        link2
+      }}</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav_href">
+        {{ link3 }}
+      </a>
+      <a routerLink="/contacts" routerLinkActive="active" class="nav_href">{{
+        link4
+      }}</a>
+    </article>
+    <article class="nav_block">
+      <a href="#" class="nav_icon">
+        <img [src]="search_icon | imgPath" alt="search" class="icon" />
+      </a>
+      <a href="#" class="nav_icon">
+        <img [src]="login_icon | imgPath" alt="login" class="icon" />
+      </a>
+    </article>
+  </div>
+</header>
+<div [ngClass]="hiddenClass">
+  <a routerLink="/catalog" routerLinkActive="active" class="nav_href">{{
+    link1
+  }}</a>
+  <a routerLink="/gallery" routerLinkActive="active" class="nav_href">{{
+    link2
+  }}</a>
+  <a routerLink="/about" routerLinkActive="active" class="nav_href">{{
+    link3
+  }}</a>
+  <a routerLink="/contacts" routerLinkActive="active" class="nav_href">{{
+    link4
+  }}</a>
+</div>

@@ -1,0 +1,129 @@
+<!-- BANNER -->
+
+<div class="banner_bg">
+  <div class="banner_wrapper">
+    <article class="banner_overlay">
+      <div class="promo_wrapper">
+        <h1>{{ banner_title }}</h1>
+        <p class="adp">{{ banner_text }}</p>
+      </div>
+    </article>
+  </div>
+</div>
+<div class="main_wrapper">
+  <!-- SLIDER -->
+
+  <app-swiper-element #swiper></app-swiper-element>
+
+  <!-- ARTIFACTS -->
+
+  <div class="artifact_wrapper">
+    <h2>{{ artifacts_title }}</h2>
+    <div class="artifact_grid">
+      <div class="artifacts_border">
+        <div class="artifacts">
+          <img
+            class="art_img"
+            [src]="art1 | imgPath"
+            alt="moss1"
+            loading="lazy"
+          />
+          <img
+            class="art_img"
+            [src]="art2 | imgPath"
+            alt="moss2"
+            loading="lazy"
+          />
+          <img
+            class="art_img stick"
+            [src]="art3 | imgPath"
+            alt="stick"
+            loading="lazy"
+          />
+          <img
+            class="art_img big degfl flower1"
+            [src]="art4 | imgPath"
+            alt="flower1"
+            loading="lazy"
+          />
+          <img
+            class="art_img big"
+            [src]="art5 | imgPath"
+            alt="leaf"
+            loading="lazy"
+          />
+          
+            <img
+              class="art_img big"
+              [src]="art6 | imgPath"
+              alt="rock"
+              loading="lazy"
+            />
+            <img
+              class="art_img big adp"
+              [src]="art7 | imgPath"
+              alt="flower2"
+              loading="lazy"
+            />
+          
+        </div>
+        <article class="artifact_swipe">
+          <span class="swipe_span">
+            Swipe to see more
+            <img
+              [src]="arrow_icon | imgPath"
+              class="artifact_svg"
+              alt="arrow"
+            />
+          </span>
+        </article>
+      </div>
+      <article class="artifact_article">
+        <h3>{{ artifacts_article_title }}</h3>
+        <p>{{ artifacts_article_text }}</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- HELP US -->
+
+  <div class="help_bg">
+    <div class="help_overlay">
+      <article class="promo_wrapper">
+        <h1 class="italic">{{ help_title }}</h1>
+        <p class="nodisplay">{{ help_text }}</p>
+      </article>
+      <form class="help_form" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+        <label>
+          <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="alert">
+            {{ error_format }}
+          </div>
+          <input
+            [class.red]="name?.invalid && name?.touched"
+            formControlName="name"
+            type="text"
+            placeholder="Имя"
+            class="input name"
+          />
+        </label>
+        <label>
+          <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="alert">
+            {{ error_format }}
+          </div>
+          <input
+            [class.red]="email?.invalid && email?.touched"
+            id="email"
+            formControlName="email"
+            type="email"
+            placeholder="Email"
+            class="input email"
+          />
+        </label>
+        <button type="submit" class="btn_alt" [disabled]="form.invalid">
+          Отправить
+        </button>
+      </form>
+    </div>
+    <div class="banner"></div>
+  </div>
+</div>

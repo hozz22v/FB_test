@@ -1,0 +1,17 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal_header">
+      <h2>{{ plantTitle }}</h2>
+      <button class="btn_alt padding" (click)="closeModal()">&#10006;</button>
+    </div>
+    <div class="modal_content">
+      <div class="modal_img_wrapper">
+        <img src="/slider/card1.png" alt="" loading="lazy" class="modal_img" />
+      </div>
+      <article class="modal_text_wrapper">
+        <p>{{ plantText }}</p>
+		<button class="btn">Купить</button>
+      </article>
+    </div>
+  </div>
+</div>
