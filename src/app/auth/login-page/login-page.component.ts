@@ -59,6 +59,12 @@ export class LoginPageComponent {
   get password() {
     return this.loginform.get('password');
   }
+  // 
+  ngOnInit(){
+    this.authService.getFunc().subscribe((res)=>{
+      console.log(res)
+    });
+  }
 
   // RXJS TEST FIELD
 
