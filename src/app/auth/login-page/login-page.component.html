@@ -1,0 +1,60 @@
+<div class="center">
+  <div class="login-wrapper">
+    <div class="login-content">
+      <form
+        [formGroup]="loginform"
+        class="login-form"
+        (ngSubmit)="LoginSubmit($event)"
+      >
+        <h1>Войти</h1>
+        <p style="color: #fff;">Логин: hozz22v <br>
+          Пароль: NnQOSZqfTt</p>
+        <article class="error_flex">
+        <input
+          [class.red]="username?.invalid && username?.touched"
+          type="text"
+          formControlName="username"
+          class="input"
+          name="username"
+          placeholder="Логин"
+        />
+        <div
+          *ngIf="
+            loginform.get('username')?.invalid &&
+            loginform.get('username')?.touched
+          "
+          class="alert"
+        >
+          {{ error_format }}
+        </div>
+        </article>
+        <article class="error_flex">
+          <input
+            [class.red]="password?.invalid && password?.touched"
+            type="text"
+            class="input"
+            formControlName="password"
+            name="password"
+            placeholder="Пароль"
+          />
+          <div
+            *ngIf="
+              loginform.get('password')?.invalid &&
+              loginform.get('password')?.touched
+            "
+            class="alert"
+          >
+            {{ error_format }}
+          </div>
+        </article>
+        <button type="submit" class="btn" [disabled]="loginform.invalid">
+          Войти
+        </button>
+      </form>
+
+      <div class="image_wrapper">
+        <img [src]="card1 | imgPath" class="login_img" alt="plant" />
+      </div>
+    </div>
+  </div>
+</div>

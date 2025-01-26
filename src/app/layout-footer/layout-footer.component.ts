@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ImgPathPipe } from '../helpers/img-path.pipe';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout-footer',
   standalone: true,
-  imports: [ImgPathPipe],
+  imports: [ImgPathPipe,RouterOutlet],
   templateUrl: './layout-footer.component.html',
   styleUrl: './layout-footer.component.css'
 })

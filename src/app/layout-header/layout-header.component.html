@@ -20,10 +20,10 @@
       }}</a>
     </article>
     <article class="nav_block">
-      <a href="#" class="nav_icon">
+      <a routerLink="#" class="nav_icon">
         <img [src]="search_icon | imgPath" alt="search" class="icon" />
       </a>
-      <a href="#" class="nav_icon">
+      <a routerLink="/login" class="nav_icon">
         <img [src]="login_icon | imgPath" alt="login" class="icon" />
       </a>
     </article>
@@ -43,3 +43,4 @@
     link4
   }}</a>
 </div>
+<router-outlet></router-outlet>

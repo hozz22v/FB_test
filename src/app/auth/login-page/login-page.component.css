@@ -1,0 +1,70 @@
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-wrapper{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 500px;
+    gap: 10em;
+    padding: 0 50px;
+    background: var(--main-dark);
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5em;
+}
+
+footer{
+    margin-top: auto;
+}
+
+.image_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_img{
+    transform: rotate(-45deg);
+    height:90%;
+}
+
+@media screen and (max-width: 667px) {
+
+    .login-wrapper{
+        width: 100%;
+    }
+    
+    .login-content{
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding: 16px;
+    }
+
+    .image_wrapper{
+        display: none;
+    }
+
+    .center{
+        padding: 32px;
+        height: calc(100vh - 64px);
+    }
+}

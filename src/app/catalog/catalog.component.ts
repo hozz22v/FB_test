@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { Init } from 'v8';
 import { response } from 'express';
+import { delay, from } from 'rxjs';
 
 @Component({
   selector: 'app-catalog',
@@ -41,7 +42,6 @@ export class CatalogComponent {
 
   ApiSubmit(event: Event) {
     if (this.apiform.valid) {
-      // console.log(this.apiform.value);
       fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
@@ -65,7 +65,5 @@ export class CatalogComponent {
     return this.apiform.get('password');
   }
 
-  // API
-  constructor(private http: HttpClient) {}
 
 }

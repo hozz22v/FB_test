@@ -3,16 +3,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ImgPathPipe } from '../helpers/img-path.pipe';
 import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ImgPathPipe, CommonModule, NgClass],
+  imports: [RouterLink, RouterLinkActive, ImgPathPipe, CommonModule, NgClass,RouterOutlet],
   templateUrl: './layout-header.component.html',
   styleUrl: './layout-header.component.css',
 })
 export class LayoutHeaderComponent {
-  link1: string = 'Каталог';
+  link1: string = 'testApi';
   link2: string = 'Галерея';
   link3: string = 'О лаборатории';
   link4: string = 'Контакты';
