@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SwiperElementComponent } from '../swiper-element/swiper-element.component';
 import { CommonModule } from '@angular/common';
 import { ImgPathPipe } from '../helpers/img-path.pipe';
@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { debounce, debounceTime, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-landing-page',
@@ -75,5 +76,19 @@ export class LandingPageComponent {
     if (this.form.valid) {
       console.log(this.form.value);
     }
+  }
+
+  // SCROLL
+  private scroll = new Subject<void>();
+
+  constructor(){
+    this.scroll.pipe(
+      debounceTime(2000),
+    ).subscribe(()=>
+    console.log('scrolling / session extended'))
+  }
+  @HostListener('window:scroll',['$event'])
+  onScroll(event:Event){
+    this.scroll.next();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ImgPathPipe } from '../../helpers/img-path.pipe';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
