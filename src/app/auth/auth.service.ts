@@ -17,9 +17,7 @@ export class AuthService {
     return this.http.post(`${this.LoginUrl}token`, fd);
   }
 
-  getFunc(){
-    return this.http.get(`${this.GetUrl}1`)
-  }
+
 
   constructor() {}
 }

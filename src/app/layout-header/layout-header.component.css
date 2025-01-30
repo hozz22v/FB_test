@@ -12,6 +12,7 @@ header {
   background: var(--main-green-1);
   color: var(--main-white-1);
   font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .nav_wrapper {
@@ -57,6 +58,10 @@ header {
 }
 
 @media screen and (max-width: 667px) {
+
+  header{
+    box-shadow: none;
+  }
   .adp {
     display: none;
   }

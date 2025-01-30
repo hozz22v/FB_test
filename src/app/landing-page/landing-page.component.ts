@@ -87,6 +87,7 @@ export class LandingPageComponent {
     ).subscribe(()=>
     console.log('scrolling / session extended'))
   }
+  
   @HostListener('window:scroll',['$event'])
   onScroll(event:Event){
     this.scroll.next();

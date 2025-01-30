@@ -1,1 +1,19 @@
-<p>gallery works!</p>
+<div class="flex-wrapper">
+  <section>
+    <h1>CARDS</h1>
+    <button class="btn" (click)="CardsInit()">Reload</button>
+    <div class="cards-wrapper">
+      @for (item of cards; track item.id){
+      <div class="card">
+        <article class="card-header">
+          <h3>{{ item.id }}</h3>
+          <h3>{{ item.title }}</h3>
+        </article>
+        <p class="card-p">{{item.body}}</p>
+      </div>
+      } @empty {
+      <h3>Ничего не найдено</h3>
+      }
+    </div>
+  </section>
+</div>
