@@ -1,18 +1,29 @@
-import { Component,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component,CUSTOM_ELEMENTS_SCHEMA, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutHeaderComponent } from './layout-header/layout-header.component';
-import { LayoutFooterComponent } from './layout-footer/layout-footer.component';
+import { debounceTime, Subject } from 'rxjs';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ LayoutHeaderComponent, LayoutFooterComponent,RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
+  private scroll = new Subject<void>();
+
+  constructor(){
+    this.scroll.pipe(
+      debounceTime(2000),
+    ).subscribe(()=>
+    console.log('scrolling / session extended'))
+  }
   
+  @HostListener('window:scroll')
+  onScroll(){
+    this.scroll.next();
+  }
 }
 

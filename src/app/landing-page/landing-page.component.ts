@@ -79,17 +79,5 @@ export class LandingPageComponent {
   }
 
   // SCROLL
-  private scroll = new Subject<void>();
 
-  constructor(){
-    this.scroll.pipe(
-      debounceTime(2000),
-    ).subscribe(()=>
-    console.log('scrolling / session extended'))
-  }
-  
-  @HostListener('window:scroll',['$event'])
-  onScroll(event:Event){
-    this.scroll.next();
-  }
 }

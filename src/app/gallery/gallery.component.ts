@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ApiServiceService } from './api-service.service';
 import { HttpClient } from '@angular/common/http';
+import { createAction } from '@ngrx/store';
 
 interface CardsGet{
   userId:number,
@@ -33,6 +34,10 @@ export class GalleryComponent {
       this.cards = res;
     })
   }
+
+//
+
+export const LoadGallery = createAction('')
 
 
 }
