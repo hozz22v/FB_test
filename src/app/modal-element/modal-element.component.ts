@@ -1,12 +1,16 @@
-import { Component,EventEmitter,Output,Signal,Input } from '@angular/core';
+import { Component,EventEmitter,Output,Signal,Input, signal } from '@angular/core';
 import { SharedService } from '../shared.service';
-
+import { Test1Component } from './test1/test1.component';
+import { Test2Component } from './test2/test2.component';
+import { Test3Component } from './test3/test3.component';
+import { Test4Component } from './test4/test4.component';
+import { Test5Component } from './test5/test5.component';
+import { NgIf } from '@angular/common';
 @Component({
-  selector: 'app-modal-element',
-  standalone: true,
-  imports: [],
-  templateUrl: './modal-element.component.html',
-  styleUrl: './modal-element.component.css'
+    selector: 'app-modal-element',
+    imports: [Test1Component, Test2Component, Test3Component, Test4Component,Test5Component, NgIf],
+    templateUrl: './modal-element.component.html',
+    styleUrl: './modal-element.component.css'
 })
 export class ModalElementComponent {
   plantTitle:string='Fig 1. (plant)';
@@ -27,5 +31,13 @@ export class ModalElementComponent {
 
   closeModal(): void {
 	this.close.emit();
+  }
+
+  // TABS
+
+  CurrentTab = signal<number>(1)
+
+  ContentSwitch(tab:number){
+    this.CurrentTab.set(tab);
   }
 }

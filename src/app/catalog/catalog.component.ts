@@ -14,11 +14,10 @@ import { response } from 'express';
 import { delay, from } from 'rxjs';
 
 @Component({
-  selector: 'app-catalog',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.css',
+    selector: 'app-catalog',
+    imports: [ReactiveFormsModule, CommonModule],
+    templateUrl: './catalog.component.html',
+    styleUrl: './catalog.component.css'
 })
 export class CatalogComponent {
   // ApiService = Inject(TestapiComponent);

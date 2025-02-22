@@ -1,7 +1,9 @@
 <div class="flex-wrapper">
   <section>
+    <article class="cards_filters">
     <h1>CARDS</h1>
-    <button class="btn" (click)="CardsInit()">Reload</button>
+    <button class="btn_3d" (click)="CardsInit()">Reload</button>
+  </article>
     <div class="cards-wrapper">
       @for (item of cards; track item.id){
       <div class="card">

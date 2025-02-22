@@ -3,11 +3,10 @@ import { ImgPathPipe } from '../helpers/img-path.pipe';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-layout-footer',
-  standalone: true,
-  imports: [ImgPathPipe,RouterOutlet],
-  templateUrl: './layout-footer.component.html',
-  styleUrl: './layout-footer.component.css'
+    selector: 'app-layout-footer',
+    imports: [ImgPathPipe, RouterOutlet],
+    templateUrl: './layout-footer.component.html',
+    styleUrl: './layout-footer.component.css'
 })
 export class LayoutFooterComponent {
   icon_yt = 'icons/Frame.svg';

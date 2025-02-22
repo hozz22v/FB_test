@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { SwiperElementComponent } from '../swiper-element/swiper-element.component';
 import { CommonModule } from '@angular/common';
 import { ImgPathPipe } from '../helpers/img-path.pipe';
@@ -10,16 +10,17 @@ import {
   Validators,
 } from '@angular/forms';
 import { debounce, debounceTime, Subject, takeUntil } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [SwiperElementComponent, ReactiveFormsModule,CommonModule,ImgPathPipe],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css',
+    selector: 'app-landing-page',
+    imports: [SwiperElementComponent, ReactiveFormsModule, CommonModule, ImgPathPipe],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.css'
 })
 
 export class LandingPageComponent {
+
   title = 'FB';
   // BANNER
   banner_title = 'Крупнейшая коллекция природных артефактов';
@@ -78,6 +79,8 @@ export class LandingPageComponent {
     }
   }
 
-  // SCROLL
+
 
 }
+
+

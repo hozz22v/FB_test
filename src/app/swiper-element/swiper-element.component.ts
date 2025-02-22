@@ -6,12 +6,11 @@ import { Signal } from '@angular/core';
 import { SharedService } from '../shared.service';
 
 @Component({
-  selector: 'app-swiper-element',
-  standalone: true,
-  imports: [CommonModule, ModalElementComponent, ImgPathPipe],
-  templateUrl: './swiper-element.component.html',
-  styleUrl: './swiper-element.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-swiper-element',
+    imports: [CommonModule, ModalElementComponent, ImgPathPipe],
+    templateUrl: './swiper-element.component.html',
+    styleUrl: './swiper-element.component.css',
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SwiperElementComponent {
   title1 ='Fig 1. (plant)';
@@ -42,13 +41,25 @@ export class SwiperElementComponent {
 
 
   // MODAL
-  isModalVisible = false;
+  isModalVisible = signal<boolean>(false);
 
   showModal() {
-    this.isModalVisible = true;
+    this.isModalVisible.set(true);
   }
 
   hideModal() {
-    this.isModalVisible = false;
+    this.isModalVisible.set(false);
   }
+
+  // SWIPER
+
+   swiperConfig = {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: (index: number, className: string) => {
+        return `<span class="${className} custom-bullet">${index + 1}</span>`;
+      },
+    },
+  };
 }

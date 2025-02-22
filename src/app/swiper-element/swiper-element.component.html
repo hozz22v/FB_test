@@ -1,8 +1,3 @@
-<!-- <swiper-container #swiperContainer init="false">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-  </swiper-container> -->
 
 <swiper-container
   class="swiper_container"
@@ -94,8 +89,11 @@
     </div>
   </swiper-slide>
 </swiper-container>
+
+<!--  -->
+
 <div class="custom-pagination"></div>
 <app-modal-element
-  *ngIf="isModalVisible"
+  *ngIf="isModalVisible()"
   (close)="hideModal()"
 ></app-modal-element>

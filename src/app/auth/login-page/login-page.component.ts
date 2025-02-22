@@ -18,14 +18,14 @@ import {
   from,
   map,
   tap,
+  toArray,
 } from 'rxjs';
 
 @Component({
-  selector: 'app-login-page',
-  standalone: true,
-  imports: [ReactiveFormsModule, ImgPathPipe, CommonModule],
-  templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.css',
+    selector: 'app-login-page',
+    imports: [ReactiveFormsModule, ImgPathPipe, CommonModule],
+    templateUrl: './login-page.component.html',
+    styleUrl: './login-page.component.css'
 })
 export class LoginPageComponent {
   error_format = '!';
@@ -50,6 +50,9 @@ export class LoginPageComponent {
         console.log(res);
       });
     }
+    else{
+      console.log('Не удалось войти')
+    }
   }
 
   get username() {
@@ -63,13 +66,18 @@ export class LoginPageComponent {
 
   // RXJS TEST FIELD
 
+  auth_data = ['hozz22v', 'NnQOSZqfTt']
+
   constructor() {
-    from(['hozz22v', 'NnQOSZqfTt'])
+    from(this.auth_data)
       .pipe(
         delay(1000),
-        tap(val =>{
-          this.loginform.patchValue({username: val.toString()}),
-          this.loginform.patchValue({password: val.toString()})
+        toArray(),
+        tap(values =>{
+          this.loginform.patchValue({
+            username: values[0].toString(),
+            password: values[1].toString(),
+          });
         })
       )
       .subscribe((val) => {

@@ -9,7 +9,18 @@
         <img src="/slider/card1.png" alt="" loading="lazy" class="modal_img" />
       </div>
       <article class="modal_text_wrapper">
-        <p>{{ plantText }}</p>
+        <article class="nav">
+          <a (click)="ContentSwitch(1)">один</a>
+          <a (click)="ContentSwitch(2)">два</a>
+          <a (click)="ContentSwitch(3)">три</a>
+          <a (click)="ContentSwitch(4)">четыре</a>
+          <a (click)="ContentSwitch(5)">пять</a>
+        </article>
+        <app-test1 *ngIf="CurrentTab()===1"></app-test1>
+        <app-test2 *ngIf="CurrentTab()===2"></app-test2>
+        <app-test3 *ngIf="CurrentTab()===3"></app-test3>
+        <app-test4 *ngIf="CurrentTab()===4"></app-test4>
+        <app-test5 *ngIf="CurrentTab()===5"></app-test5>
 		<button class="btn">Купить</button>
       </article>
     </div>
